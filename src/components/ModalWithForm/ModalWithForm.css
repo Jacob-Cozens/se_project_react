@@ -16,13 +16,48 @@
 }
 
 .modal__title {
-  margin: 0;
+  margin: 28px 0 0 28px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.modal__label {
+  margin: 24px 0 0 28px;
+}
+
+.modal__label_type_radio {
+  margin: 8px 0 0 28px;
+}
+
+.modal__input {
+  width: 440px;
+  margin: 8px 0 0 0;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.modal__legend {
+  padding: 24px 0 0 28px;
 }
 
 .modal__cls {
   position: absolute;
   top: 20px;
   right: 28px;
+}
+
+.modal__sub {
+  height: 36px;
+  width: 124px;
+  margin: 32px 0 36px 28px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgb(0, 0, 0, 0.3);
+  border: none;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 .modal__content {
@@ -32,6 +67,14 @@
   max-width: 496px;
   width: 100%;
   box-sizing: border-box;
+  margin: auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 .modal__form {

@@ -9,8 +9,20 @@
   position: absolute;
   top: 15px;
   margin: 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  background-color: white;
+  padding: 0 12px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .card__img {
   width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
 }

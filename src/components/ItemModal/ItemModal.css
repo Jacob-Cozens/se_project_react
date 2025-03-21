@@ -1,0 +1,40 @@
+.modal__content {
+  position: relative;
+  max-height: 610px;
+  max-width: 496px;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal__caption {
+  margin: 0;
+  padding: 20px 0 12px 32px;
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.modal__weather {
+  margin: 0;
+  padding: 0 0 32px 32px;
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.modal__cls {
+  width: 16px;
+  height: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
