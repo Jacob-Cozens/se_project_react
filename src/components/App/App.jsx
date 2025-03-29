@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import ItemModal from "../ItemModal/ItemModal";
+import AddItemModal from "../AddItemModal/AddItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit";
-import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
+import ItemModal from "../ItemModal/ItemModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -43,7 +43,7 @@ function App() {
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
     closeActiveModal();
-  }
+  };
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
