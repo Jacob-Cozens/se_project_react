@@ -38,3 +38,15 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+.modal__delete {
+  border: none;
+  color: #ff4d00;
+  background-color: transparent;
+  cursor: pointer;
+  right: 32px;
+  bottom: 66px;
+  position: absolute;
+  font-size: 20px;
+  line-height: 24px;
+}
