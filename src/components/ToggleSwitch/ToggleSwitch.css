@@ -5,6 +5,7 @@
   font-weight: 700;
   position: relative;
   margin-left: 650px;
+  color: #7e7e7e;
   background-color: white;
   width: 56px;
   height: 28px;
@@ -12,6 +13,11 @@
   border-radius: 20px;
   cursor: pointer;
   overflow: hidden;
+}
+
+.toggle-switch:hover {
+    border: 2px solid black;
+    color: black;
 }
 
 .toggle-switch__checkbox {
@@ -30,7 +36,6 @@
 
 .toggle-switch__text {
   position: absolute;
-  color: #7e7e7e;
   top: 6px;
 }
 
