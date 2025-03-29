@@ -29,7 +29,7 @@
 
 .toggle-switch__text {
   position: absolute;
-  color: white;
+  color: #7e7e7e;
   top: 6px;
 }
 
@@ -39,9 +39,12 @@
 
 .toggle-switch__text_C {
   right: 9px;
-  color: #7e7e7e;
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle {
   left: 28px;
 }
+
+.toggle-switch__text_white {
+    color: white;
+  }
