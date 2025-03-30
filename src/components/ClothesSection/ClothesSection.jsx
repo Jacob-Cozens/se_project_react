@@ -4,9 +4,9 @@ import "./ClothesSection.css";
 function ClothesSection({ handleCardClick, clothingItems = [] }) {
   return (
     <div className="clothes-section">
-      <div className="">
-        <p>Your items</p>
-        <button>+ Add New Clothes</button>
+      <div className="clothes-section__container">
+        <p className="clothes-section__text">Your items</p>
+        <button className="clothes-section__btn">+ Add New</button>
       </div>
       <div className="clothes-section__card">
         {clothingItems.map((item) => (

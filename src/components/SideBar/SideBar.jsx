@@ -4,8 +4,10 @@ import avatar from "../../assets/WTWRAvatar.svg";
 function SideBar() {
   return (
     <div className="sidebar">
-      <img className="sidebar__avatar" src={avatar} alt="Default" />
-      <p className="sidebar__username">Buddy Boy</p>
+      <div className="sidebar__userinfo">
+        <img className="sidebar__avatar" src={avatar} alt="Default" />
+        <p className="sidebar__username">Terrence Tegegne</p>
+      </div>
     </div>
   );
 }
