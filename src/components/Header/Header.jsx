@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../assets/WTWRLogo.svg";
 import avatar from "../../assets/WTWRAvatar.svg";
@@ -11,7 +12,9 @@ function Header({ handleAddClick, weatherData }) {
 
   return (
     <header className="header">
-      <img className="header__logo" src={logo} alt="logo" />
+      <Link to="/">
+        <img className="header__logo" src={logo} alt="logo" />
+      </Link>
       <p className="header__date">
         {currentDate}, {weatherData.city}
       </p>
@@ -23,10 +26,12 @@ function Header({ handleAddClick, weatherData }) {
       >
         + Add clothes
       </button>
-      <div className="header__user">
-        <p className="header__username">Terrence Tegegne</p>
-        <img src={avatar} alt="NAME" className="header__avatar" />
-      </div>
+      <Link to="/profile" className="header__link" >
+        <div className="header__user">
+          <p className="header__username">Terrence Tegegne</p>
+          <img src={avatar} alt="NAME" className="header__avatar" />
+        </div>
+      </Link>
     </header>
   );
 }

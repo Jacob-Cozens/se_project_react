@@ -12,6 +12,7 @@ import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit";
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
+import Profile from "../Profile/Profile";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -85,7 +86,7 @@ function App() {
                   />
                 }
               />
-              <Route path="/profile" element={<p>PROFILE</p>} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
 
             <Footer />
