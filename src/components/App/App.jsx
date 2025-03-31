@@ -110,6 +110,7 @@ function App() {
                 element={
                   <Profile
                     clothingItems={clothingItems}
+                    handleAddClick={handleAddClick}
                     handleCardClick={handleCardClick}
                   />
                 }
