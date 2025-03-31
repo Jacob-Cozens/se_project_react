@@ -44,9 +44,17 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
-    closeActiveModal();
+  const handleSubmit = (request) => {
+    request().then(handleCloseModal).catch(console.error);
+  };
+
+  const handleAddItemModalSubmit = (item) => {
+    const addItemRequest = () => {
+      return addItems(item).then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+      });
+    };
+    handleSubmit(addItemRequest);
   };
 
   const handleCardDelete = (selectedCard) => {
@@ -117,7 +125,7 @@ function App() {
           />
           <ItemModal
             activeModal={activeModal}
-            card={selectedCard}
+            selectedCard={selectedCard}
             handleCloseClick={closeActiveModal}
             onDelete={handleCardDelete}
           />
