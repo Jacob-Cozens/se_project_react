@@ -13,7 +13,7 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-import { getItems } from "../../utils/Api";
+import { getItems, addItems, deleteItem } from "../../utils/Api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -50,7 +50,7 @@ function App() {
   };
 
   const handleCardDelete = (selectedCard) => {
-    selectedCard.then(() => {
+    deleteItem(selectedCard).then(() => {
       const newClothingItems = clothingItems.filter((cards) => {
         return cards._id !== selectedCard._id;
       });
