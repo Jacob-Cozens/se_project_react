@@ -13,6 +13,7 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
+import { getItems } from "../../utils/Api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -65,6 +66,16 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (
