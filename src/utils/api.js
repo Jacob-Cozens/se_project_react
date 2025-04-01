@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3007";
+const baseUrl = "http://localhost:3001";
 
 function processResponse(res) {
   if (res.ok) {
@@ -45,4 +45,4 @@ const deleteItem = (selectedCard) => {
   });
 };
 
-export { getItems, addItems, deleteItem };
+export { getItems, addItems, deleteItem, processResponse };

@@ -54,17 +54,21 @@ function App() {
         setClothingItems([newItem, ...clothingItems]);
       });
     };
-    handleSubmit(addItemRequest);
+    handleSubmit(addItemRequest).catch(console.error);
   };
 
   const handleCardDelete = (selectedCard) => {
-    deleteItem(selectedCard).then(() => {
-      const newClothingItems = clothingItems.filter((cards) => {
-        return cards._id !== selectedCard._id;
+    deleteItem(selectedCard)
+      .then(() => {
+        const newClothingItems = clothingItems.filter((cards) => {
+          return cards._id !== selectedCard._id;
+        });
+        setClothingItems(newClothingItems);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      setClothingItems(newClothingItems);
-      closeActiveModal();
-    });
   };
 
   useEffect(() => {
@@ -73,7 +77,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {

@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "_id": 10,
-      "name": "Scarf",
-      "weather": "cold",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c"
-    },
-    {
       "_id": 11,
       "name": "Shorts",
       "weather": "Hot",
@@ -55,16 +49,28 @@
       "_id": 18
     },
     {
-      "name": "scarf",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
+      "name": "Pumpkin",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Big_%26_Small_Pumkins.JPG/2560px-Big_%26_Small_Pumkins.JPG",
       "weather": "cold",
-      "_id": 19
+      "_id": 21
     },
     {
-      "name": "scarf",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
+      "name": "Big",
+      "link": "https://t4.ftcdn.net/jpg/00/81/99/87/360_F_81998709_gbGqzu2eO8XmUzRw11A5xVM8LOGycgi9.jpg",
       "weather": "cold",
-      "_id": 20
+      "_id": 22
+    },
+    {
+      "name": "pumplin",
+      "link": "",
+      "weather": "",
+      "_id": 23
+    },
+    {
+      "name": "pumpkin",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/5/5c/FrenchMarketPumpkinsB.jpg",
+      "weather": "cold",
+      "_id": 24
     }
   ]
 }

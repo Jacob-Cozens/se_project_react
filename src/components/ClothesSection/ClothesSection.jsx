@@ -13,7 +13,7 @@ function ClothesSection({ handleCardClick, clothingItems, handleAddClick = [] })
       <div className="clothes-section__card">
         {clothingItems.map((item) => (
           <ItemCard
-            key={item.id}
+            key={item._id}
             item={item}
             onCardClick={() => handleCardClick(item)}
           />
