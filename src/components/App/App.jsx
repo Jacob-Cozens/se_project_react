@@ -45,7 +45,7 @@ function App() {
   };
 
   const handleSubmit = (request) => {
-    request().then(handleCloseModal).catch(console.error);
+    request().then(closeActiveModal).catch(console.error);
   };
 
   const handleAddItemModalSubmit = (item) => {

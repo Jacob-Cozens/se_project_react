@@ -58,6 +58,11 @@
   border: none;
   font-size: 16px;
   line-height: 1.2;
+  transition: background-color 0.3s ease-in;
+}
+
+.modal__sub:hover {
+  background-color: black;
 }
 
 .modal__content {

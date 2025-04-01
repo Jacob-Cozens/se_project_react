@@ -1,7 +1,6 @@
 .clothes-section {
   display: flex;
   flex-direction: column;
-  margin: 0 0 100px 70px;
 }
 
 .clothes-section__container {
@@ -25,6 +24,7 @@
   gap: 18px;
   width: 1015px;
   height: 676px;
+  flex: 1;
 }
 
 .clothes-section__btn {
