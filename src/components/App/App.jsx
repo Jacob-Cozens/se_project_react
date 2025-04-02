@@ -44,14 +44,15 @@ function App() {
     setActiveModal("");
   };
 
-  const handleSubmit = (request) => {
-    request().then(closeActiveModal).catch(console.error);
-  };
+ const handleSubmit = (request) => {
+  return request().then(closeActiveModal).catch(console.error);
+};
 
   const handleAddItemModalSubmit = (item) => {
     const addItemRequest = () => {
       return addItems(item).then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
+        return newItem;
       });
     };
     handleSubmit(addItemRequest).catch(console.error);
