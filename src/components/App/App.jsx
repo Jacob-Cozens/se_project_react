@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, act } from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import "./App.css";
@@ -13,6 +13,9 @@ import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import { getItems, addItems, deleteItem } from "../../utils/Api";
+import auth from "../../utils/auth";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 
 function ProtectedRoute({ isLoggedIn, children }) {
   return isLoggedIn ? children : <Navigate to="/" replace />;
@@ -76,6 +79,32 @@ function App() {
       });
   };
 
+  const handleLogin = ({ email, password }) => {
+    const loginRequest = () => {
+      return auth.authorize({ email, password }).then((res) => {
+        const token = res.token;
+        localStorage.setItem("jwt", token);
+        return auth.getContent(token).then((userData) => {
+          setCurrentUser(userData);
+          setIsLoggedIn(true);
+        });
+      });
+    };
+    handleSubmit(loginRequest);
+  };
+
+  const handleRegister = ({ email, password, name, imageUrl }) => {
+    const registerRequest = () => {
+      return auth
+        .register({ email, password, name, imageUrl })
+        .then((newUser) => {
+          console.log(newUser);
+          handleLogin({ email, password });
+        });
+    };
+    handleSubmit(registerRequest);
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -95,6 +124,25 @@ function App() {
       .catch((error) => {
         console.error(error);
       });
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      getUserData(token)
+        .then((res) => {
+          if (res) {
+            setIsLoggedIn(true);
+            setCurrentUser(res);
+          } else {
+            setIsLoggedIn(false);
+            setCurrentUser(null);
+          }
+        })
+        .catch((error) => { 
+          console.error(error);
+        });
+    }
   }, []);
 
   return (
@@ -142,6 +190,16 @@ function App() {
             selectedCard={selectedCard}
             handleCloseClick={closeActiveModal}
             onDelete={handleCardDelete}
+          />
+          <LoginModal
+            handleCloseClick={closeActiveModal}
+            onLogin={handleLogin}
+            activeModal={activeModal}
+          />
+          <RegisterModal
+            handleCloseClick={closeActiveModal}
+            onRegister={handleRegister}
+            activeModal={activeModal}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>

@@ -1,4 +1,4 @@
-import { baseUrl, processResponse } from "./constants";
+import { baseUrl, processResponse } from "./Api";
 
 const register = ({ email, password, name, avatar }) => {
   return fetch(`${baseUrl}/signup`, {
@@ -32,6 +32,19 @@ const authorize = ({ email, password }) => {
   });
 };
 
-const auth = { register, authorize };
+const getContent = (token) => {
+  return (fetch(`${baseUrl}/users/me`),
+  {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then((res) => {
+    return processResponse(res);
+  });
+};
+
+const auth = { register, authorize, getContent };
 
 export default auth;
