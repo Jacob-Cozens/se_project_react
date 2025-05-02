@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -15,6 +14,10 @@ import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import { getItems, addItems, deleteItem } from "../../utils/Api";
 
+function ProtectedRoute({ isLoggedIn, children }) {
+  return isLoggedIn ? children : <Navigate to="/" replace />;
+}
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -26,6 +29,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatrueUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatrueUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -44,9 +48,9 @@ function App() {
     setActiveModal("");
   };
 
- const handleSubmit = (request) => {
-  return request().then(closeActiveModal).catch(console.error);
-};
+  const handleSubmit = (request) => {
+    return request().then(closeActiveModal).catch(console.error);
+  };
 
   const handleAddItemModalSubmit = (item) => {
     const addItemRequest = () => {
@@ -115,11 +119,13 @@ function App() {
               <Route
                 path="/profile"
                 element={
-                  <Profile
-                    clothingItems={clothingItems}
-                    handleAddClick={handleAddClick}
-                    handleCardClick={handleCardClick}
-                  />
+                  <ProtectedRoute isLoggedIn={isLoggedIn}>
+                    <Profile
+                      clothingItems={clothingItems}
+                      handleAddClick={handleAddClick}
+                      handleCardClick={handleCardClick}
+                    />
+                  </ProtectedRoute>
                 }
               />
             </Routes>

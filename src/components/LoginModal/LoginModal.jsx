@@ -38,8 +38,7 @@ function LoginModal({ handleCloseClick, isOpen, onLogin }) {
       <label className="modal__label">
         Email
         <input
-          type="text"
-          name="email"
+          type="email"
           className="modal__input"
           id="email"
           placeholder="Email"
@@ -50,8 +49,7 @@ function LoginModal({ handleCloseClick, isOpen, onLogin }) {
       <label className="modal__label">
         Password
         <input
-          type="text"
-          name="password"
+          type="password"
           className="modal__input"
           id="password"
           placeholder="Password"

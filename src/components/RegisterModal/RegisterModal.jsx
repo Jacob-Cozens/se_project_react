@@ -50,7 +50,7 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister }) {
       <label className="modal__label">
         Email
         <input
-          type="text"
+          type="email"
           className="modal__input"
           id="email"
           placeholder="Email"
@@ -61,7 +61,7 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister }) {
       <label className="modal__label">
         Password
         <input
-          type="text"
+          type="password"
           className="modal__input"
           id="password"
           placeholder="Password"
