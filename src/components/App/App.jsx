@@ -159,6 +159,7 @@ function App() {
               <Header
                 handleAddClick={handleAddClick}
                 weatherData={weatherData}
+                isLoggedIn={isLoggedIn}
               />
               <Routes>
                 <Route
