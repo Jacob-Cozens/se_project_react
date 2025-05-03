@@ -47,3 +47,15 @@
 .header__link {
   text-decoration: none;
 }
+
+.header__button {
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: 6px;
+}

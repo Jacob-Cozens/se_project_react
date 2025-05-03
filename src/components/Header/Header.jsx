@@ -23,7 +23,7 @@ function Header({ handleAddClick, weatherData, onRegister, OnLogin }) {
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
-      {currentUser ? (
+      {currentUser?.name ? (
         <>
           <button
             onClick={handleAddClick}
