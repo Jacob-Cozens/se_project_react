@@ -6,8 +6,7 @@ import avatar from "../../assets/WTWRAvatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-
-function Header({ handleAddClick, weatherData }) {
+function Header({ handleAddClick, weatherData, onRegister, OnLogin }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -24,19 +23,36 @@ function Header({ handleAddClick, weatherData }) {
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
-      <button
-        onClick={handleAddClick}
-        type="button"
-        className="header__add-clothes-btn"
-      >
-        + Add clothes
-      </button>
-      <Link to="/profile" className="header__link" >
-        <div className="header__user">
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="NAME" className="header__avatar" />
-        </div>
-      </Link>
+      {currentUser ? (
+        <>
+          <button
+            onClick={handleAddClick}
+            type="button"
+            className="header__add-clothes-btn"
+          >
+            + Add clothes
+          </button>
+          <Link to="/profile" className="header__link">
+            <div className="header__user">
+              <p className="header__username">{currentUser.name}</p>
+              <img
+                src={currentUser.avatar || avatar}
+                alt={currentUser.name}
+                className="header__avatar"
+              />
+            </div>
+          </Link>
+        </>
+      ) : (
+        <>
+          <button type="text" className="header__button" onClick={onRegister}>
+            Sign up
+          </button>
+          <button type="text" className="header__button" onClick={OnLogin}>
+            Log in
+          </button>
+        </>
+      )}
     </header>
   );
 }

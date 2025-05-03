@@ -202,12 +202,12 @@ function App() {
             <LoginModal
               handleCloseClick={closeActiveModal}
               onLogin={handleLogin}
-              activeModal={activeModal}
+              isOpen={activeModal === "login"}
             />
             <RegisterModal
               handleCloseClick={closeActiveModal}
               onRegister={handleRegister}
-              activeModal={activeModal}
+              isOpen={activeModal === "register"}
             />
           </div>
         </CurrentTemperatureUnitContext.Provider>
