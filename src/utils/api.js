@@ -45,4 +45,4 @@ const deleteItem = (selectedCard) => {
   });
 };
 
-export { getItems, addItems, deleteItem, processResponse };
+

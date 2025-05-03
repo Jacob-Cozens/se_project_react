@@ -1,4 +1,6 @@
-import { baseUrl, processResponse } from "./Api";
+import { processResponse } from "./Api";
+
+const baseUrl = "http://localhost:3001";
 
 const register = ({ email, password, name, avatar }) => {
   return fetch(`${baseUrl}/signup`, {
@@ -33,8 +35,7 @@ const authorize = ({ email, password }) => {
 };
 
 const getContent = (token) => {
-  return (fetch(`${baseUrl}/users/me`),
-  {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
