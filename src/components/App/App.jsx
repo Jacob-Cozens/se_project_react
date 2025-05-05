@@ -107,6 +107,14 @@ function App() {
     handleSubmit(registerRequest);
   };
 
+  const onRegisterOpen = () => {
+    setActiveModal("register");
+  };
+
+  const onLoginOpen = () => {
+    setActiveModal("login");
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -160,8 +168,8 @@ function App() {
                 handleAddClick={handleAddClick}
                 weatherData={weatherData}
                 isLoggedIn={isLoggedIn}
-                onLogin={handleLogin}
-                onRegister={handleRegister}
+                onLogin={onLoginOpen}
+                onRegister={onRegisterOpen}
               />
               <Routes>
                 <Route

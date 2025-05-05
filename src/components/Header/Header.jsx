@@ -6,7 +6,7 @@ import avatar from "../../assets/WTWRAvatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-function Header({ handleAddClick, weatherData, onRegister, OnLogin }) {
+function Header({ handleAddClick, weatherData, onRegister, onLogin }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -48,7 +48,7 @@ function Header({ handleAddClick, weatherData, onRegister, OnLogin }) {
           <button type="text" className="header__button" onClick={onRegister}>
             Sign up
           </button>
-          <button type="text" className="header__button" onClick={OnLogin}>
+          <button type="text" className="header__button" onClick={onLogin}>
             Log in
           </button>
         </>
