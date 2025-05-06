@@ -12,10 +12,11 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-import { getItems, addItems, deleteItem } from "../../utils/Api";
+import { getItems, addItems, deleteItem, updateProfile } from "../../utils/api";
 import auth from "../../utils/auth";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 function ProtectedRoute({ isLoggedIn, children }) {
@@ -92,7 +93,7 @@ function App() {
         });
       });
     };
-    handleSubmit(loginRequest);
+    handleSubmit(loginRequest).catch(console.error);
   };
 
   const handleRegister = ({ email, password, name, imageUrl }) => {
@@ -101,10 +102,21 @@ function App() {
         .register({ email, password, name, imageUrl })
         .then((newUser) => {
           console.log(newUser);
-          handleLogin({ email, password });
+          return handleLogin({ email, password });
         });
     };
-    handleSubmit(registerRequest);
+    handleSubmit(registerRequest).catch(console.error);
+  };
+
+  const handleUpdateProfile = ({ name, imageUrl }) => {
+    const token = localStorage.getItem("jwt");
+    const updateRequest = () => {
+      return updateProfile({ name, imageUrl }, token).then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        return updatedUser;
+      });
+    };
+    handleSubmit(updateRequest).catch(console.error);
   };
 
   const onRegisterOpen = () => {
@@ -113,6 +125,10 @@ function App() {
 
   const onLoginOpen = () => {
     setActiveModal("login");
+  };
+
+  const onUpdateProfileOpen = () => {
+    setActiveModal("edit");
   };
 
   useEffect(() => {
@@ -190,6 +206,7 @@ function App() {
                         clothingItems={clothingItems}
                         handleAddClick={handleAddClick}
                         handleCardClick={handleCardClick}
+                        onUpdateProfile={onUpdateProfileOpen}
                       />
                     </ProtectedRoute>
                   }
@@ -218,6 +235,11 @@ function App() {
               handleCloseClick={closeActiveModal}
               onRegister={handleRegister}
               isOpen={activeModal === "register"}
+            />
+            <EditProfileModal
+              handleCloseClick={closeActiveModal}
+              onUpdateProfile={handleUpdateProfile}
+              isOpen={activeModal === "edit"}
             />
           </div>
         </CurrentTemperatureUnitContext.Provider>

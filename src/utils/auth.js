@@ -1,4 +1,4 @@
-import { processResponse } from "./Api";
+import { processResponse } from "./api";
 
 const baseUrl = "http://localhost:3001";
 
