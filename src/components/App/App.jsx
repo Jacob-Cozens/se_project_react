@@ -85,6 +85,7 @@ function App() {
   const handleLogin = ({ email, password }) => {
     const loginRequest = () => {
       return auth.authorize({ email, password }).then((res) => {
+        console.log(res);
         const token = res.token;
         localStorage.setItem("jwt", token);
         return auth.getContent(token).then((userData) => {
