@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./SideBar.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-function SideBar({ onLogout }) {
+function SideBar({ onLogout, onUpdateProfile }) {
   const currentUser = useContext(CurrentUserContext);
   const name = currentUser?.name;
   const avatar = currentUser?.avatar;
@@ -16,6 +16,7 @@ function SideBar({ onLogout }) {
         <img className="sidebar__avatar" src={avatar} alt="Default" />
         <p className="sidebar__username">{name}</p>
       </div>
+      <button type="button" onClick={onUpdateProfile}>Update Profile</button>
       <button type="button" onClick={onLogout}>Log Out</button>
     </div>
   );
