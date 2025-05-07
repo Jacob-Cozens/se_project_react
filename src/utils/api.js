@@ -27,7 +27,7 @@ const addItems = ({ name, imageUrl, weather }) => {
     },
     body: JSON.stringify({
       name: name,
-      link: imageUrl,
+      imageUrl: imageUrl,
       weather: weather,
     }),
   }).then(processResponse);
