@@ -100,7 +100,7 @@ function App() {
   const handleRegister = ({ email, password, name, imageUrl }) => {
     const registerRequest = () => {
       return auth
-        .register({ email, password, name, imageUrl })
+        .register({ email, password, name, avatar: imageUrl })
         .then((newUser) => {
           console.log(newUser);
           return handleLogin({ email, password });
@@ -141,6 +141,13 @@ function App() {
             );
           })
           .catch((err) => console.log(err));
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser({});
+    localStorage.removeItem("jwt");
+    history.push("/");
   };
 
   const onRegisterOpen = () => {
@@ -233,6 +240,7 @@ function App() {
                         handleCardClick={handleCardClick}
                         onUpdateProfile={onUpdateProfileOpen}
                         onCardLike={handleCardLike}
+                        onLogout={handleLogout}
                       />
                     </ProtectedRoute>
                   }

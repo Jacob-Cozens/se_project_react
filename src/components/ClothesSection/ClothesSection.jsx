@@ -3,7 +3,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-function ClothesSection({ handleCardClick, handleAddClick = [] }) {
+function ClothesSection({ handleCardClick, handleAddClick = [], clothingItems }) {
   const currentUser = useContext(CurrentUserContext);
   const userItems = clothingItems.filter(
     (item) => item.owner === currentUser?._id
