@@ -1,6 +1,19 @@
+import { useContext } from "react";
 import "./ItemCard.css";
+import CurrentUserContext from "../../context/CurrentUserContext";
+import likeHeart from "../../assets/likeHeart.svg";
+import likeHeartActive from "../../assets/likeHeartActive.svg";
 
-function ItemCard({ item, onCardClick }) {
+function ItemCard({ item, onCardClick, onCardLike }) {
+  const currentUser = useContext(CurrentUserContext);
+
+  const isLiked = item?.likes?.includes(currentUser?._id) || false;
+
+  const handleLike = (e) => {
+    e.PreventDefault();
+    onCardLike({ id: item._id, isLiked });
+  };
+
   const handleCardClick = () => {
     onCardClick(item);
   };

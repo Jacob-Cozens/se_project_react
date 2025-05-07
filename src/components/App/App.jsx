@@ -12,7 +12,7 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-import { getItems, addItems, deleteItem, updateProfile } from "../../utils/api";
+import { getItems, addItems, deleteItem, updateProfile } from "../../utils/Api";
 import auth from "../../utils/auth";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -120,6 +120,29 @@ function App() {
     handleSubmit(updateRequest).catch(console.error);
   };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+    !isLiked
+      ? api
+
+          .addCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : api
+
+          .removeCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
   const onRegisterOpen = () => {
     setActiveModal("register");
   };
@@ -196,6 +219,7 @@ function App() {
                       weatherData={weatherData}
                       handleCardClick={handleCardClick}
                       clothingItems={clothingItems}
+                      onCardLike={handleCardLike}
                     />
                   }
                 />
@@ -208,6 +232,7 @@ function App() {
                         handleAddClick={handleAddClick}
                         handleCardClick={handleCardClick}
                         onUpdateProfile={onUpdateProfileOpen}
+                        onCardLike={handleCardLike}
                       />
                     </ProtectedRoute>
                   }
