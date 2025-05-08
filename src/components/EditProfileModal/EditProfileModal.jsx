@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import "./EditProfileModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
@@ -44,17 +43,19 @@ function EditProfileModal({ handleCloseClick, isOpen, onUpdateProfile }) {
           placeholder="Name"
           onChange={handleNameChange}
           value={name}
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
         Image{" "}
         <input
-          type="text"
+          type="url"
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
           onChange={handleImageUrlChange}
           value={imageUrl}
+          required
         />
       </label>
     </ModalWithForm>

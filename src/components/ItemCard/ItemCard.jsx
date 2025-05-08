@@ -9,7 +9,7 @@ function ItemCard({ item, onCardClick, onCardLike, isLoggedIn }) {
 
   const isLiked = item.likes.some(id => id === currentUser._id);
   const likeButtonClassName = `card__like-button ${
-    !isLoggedIn && "card__like-button-hidden"
+    !isLoggedIn && "card__like-button_hidden"
   }`;
   const likeButtonPath = isLiked ? likeHeart : likeHeartActive;
 

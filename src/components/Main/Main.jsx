@@ -22,7 +22,7 @@ function Main({ weatherData, handleCardClick, onCardLike, clothingItems, default
           {currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className="cards__list">
-          {userItems
+          {clothingItems
             .filter((item) => {
               return item.weather === weatherData.type;
             })
