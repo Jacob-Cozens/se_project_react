@@ -49,6 +49,7 @@
 }
 
 .modal__sub {
+  z-index: 0;
   height: 36px;
   width: 124px;
   margin: 32px 0 36px 28px;
@@ -59,6 +60,7 @@
   font-size: 16px;
   line-height: 1.2;
   transition: background-color 0.3s ease-in;
+  cursor: pointer;
 }
 
 .modal__sub:hover {

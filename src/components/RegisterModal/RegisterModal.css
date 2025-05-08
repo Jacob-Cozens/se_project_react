@@ -1,0 +1,23 @@
+.modal__register-switch {
+    width: 85px;
+    height: 20px;
+    z-index: 0;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    margin: 0 0 0 28px;
+    font-family: "Cabinet Grotesk", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    color: rgb(0, 0, 0, 0.5);
+    top: 60px;
+    left: 130px;
+    transition: color 0.3s ease-in;
+    cursor: pointer;
+  }
+  
+  .modal__register-switch:hover {
+    color: black;
+  }
+  

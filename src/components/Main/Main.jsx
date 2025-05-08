@@ -4,7 +4,7 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit";
 import CurrentUserContext from "../../context/CurrentUserContext";
-import { defaultClothingItems } from "../../utils/constants";
+
 
 function Main({
   weatherData,

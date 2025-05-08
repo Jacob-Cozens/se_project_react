@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({ handleCloseClick, isOpen, onRegister }) {
+function RegisterModal({ handleCloseClick, isOpen, onRegister, onLoginOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -91,6 +91,7 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister }) {
           value={imageUrl}
         />
       </label>
+      <button className="modal__register-switch" onClick={onLoginOpen}>or Log In</button>
     </ModalWithForm>
   );
 }

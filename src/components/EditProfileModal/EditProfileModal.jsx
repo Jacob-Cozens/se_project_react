@@ -30,7 +30,7 @@ function EditProfileModal({ handleCloseClick, isOpen, onUpdateProfile }) {
     <ModalWithForm
       isOpen={isOpen}
       title="Edit Profile"
-      buttonText="Save"
+      buttonText="Save changes"
       handleCloseClick={handleCloseClick}
       handleSubmit={handleSubmit}
     >

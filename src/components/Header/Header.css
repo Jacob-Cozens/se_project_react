@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 32px 0 28px;
 }
@@ -27,6 +26,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  margin-right: 20px
 }
 
 .header__user {

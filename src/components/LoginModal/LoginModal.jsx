@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function LoginModal({ handleCloseClick, isOpen, onLogin }) {
+function LoginModal({ handleCloseClick, isOpen, onLogin, onRegisterOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -57,6 +57,7 @@ function LoginModal({ handleCloseClick, isOpen, onLogin }) {
           value={password}
         />
       </label>
+      <button className="modal__login-switch" onClick={onRegisterOpen}>or Sign Up</button>
     </ModalWithForm>
   );
 }
