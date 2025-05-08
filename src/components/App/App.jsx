@@ -232,6 +232,7 @@ function App() {
                       handleCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       onCardLike={handleCardLike}
+                      isLoggedIn={isLoggedIn}
                     />
                   }
                 />
@@ -246,6 +247,7 @@ function App() {
                         onUpdateProfile={onUpdateProfileOpen}
                         onCardLike={handleCardLike}
                         onLogout={handleLogout}
+                        isLoggedIn={isLoggedIn}
                       />
                     </ProtectedRoute>
                   }

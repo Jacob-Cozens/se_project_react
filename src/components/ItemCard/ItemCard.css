@@ -5,9 +5,17 @@
   justify-content: center;
 }
 
-.card__name {
+.card__info {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   top: 15px;
+}
+
+.card__name {
   margin: 0;
   color: rgba(0, 0, 0, 0.6);
   font-family: "Cabinet Grotesk";
@@ -37,6 +45,6 @@
   border: none;
 }
 
-.card__like-button_hidden {
+.card__like-button-hidden {
   visibility: hidden;
 }

@@ -6,7 +6,13 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import CurrentUserContext from "../../context/CurrentUserContext";
 import { defaultClothingItems } from "../../utils/constants";
 
-function Main({ weatherData, handleCardClick, onCardLike, clothingItems, defaultClothingItems }) {
+function Main({
+  weatherData,
+  handleCardClick,
+  onCardLike,
+  clothingItems,
+  isLoggedIn,
+}) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const currentUser = useContext(CurrentUserContext);
   const userItems = clothingItems.filter(
@@ -33,6 +39,7 @@ function Main({ weatherData, handleCardClick, onCardLike, clothingItems, default
                   item={item}
                   onCardClick={handleCardClick}
                   onCardLike={onCardLike}
+                  isLoggedIn={isLoggedIn}
                 />
               );
             })}
