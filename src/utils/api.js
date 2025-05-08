@@ -58,7 +58,7 @@ const updateProfile = ({ name, imageUrl }) => {
   });
 };
 
-const addCardLike = (id) => {
+const addCardLike = ({ id }) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
     headers: {
@@ -70,7 +70,7 @@ const addCardLike = (id) => {
   });
 };
 
-const removeCardLike = (id) => {
+const removeCardLike = ({ id }) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
