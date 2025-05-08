@@ -45,12 +45,14 @@ function Header({ handleAddClick, weatherData, onRegister, onLogin }) {
         </>
       ) : (
         <>
-          <button type="text" className="header__button" onClick={onRegister}>
-            Sign up
-          </button>
-          <button type="text" className="header__button" onClick={onLogin}>
-            Log in
-          </button>
+          <div className="header__unknown-user">
+            <button type="text" className="header__unknown-user_button" onClick={onRegister}>
+              Sign up
+            </button>
+            <button type="text" className="header__unknown-user_button" onClick={onLogin}>
+              Log in
+            </button>
+          </div>
         </>
       )}
     </header>

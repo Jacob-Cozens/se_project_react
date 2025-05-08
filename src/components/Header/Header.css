@@ -19,7 +19,6 @@
 }
 
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
   color: #000;
   font-family: "Cabinet Grotesk";
   font-size: 20px;
@@ -49,7 +48,7 @@
   text-decoration: none;
 }
 
-.header__button {
+.header__unknown-user_button {
   color: #000;
   font-family: "Cabinet Grotesk";
   font-size: 20px;
@@ -62,7 +61,6 @@
 }
 
 .header__avatar {
-  margin: -8px 0 0 12px;
   padding: 0;
   width: 40px;
   height: 40px;
