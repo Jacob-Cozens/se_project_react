@@ -58,4 +58,34 @@ const updateProfile = ({ name, imageUrl }) => {
   });
 };
 
-export { processResponse, getItems, addItems, deleteItem, updateProfile };
+const addCardLike = (id) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    },
+  }).then((res) => {
+    return processResponse(res);
+  });
+};
+
+const removeCardLike = (id) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    },
+  }).then(processResponse);
+};
+
+export {
+  processResponse,
+  getItems,
+  addItems,
+  deleteItem,
+  updateProfile,
+  addCardLike,
+  removeCardLike,
+};

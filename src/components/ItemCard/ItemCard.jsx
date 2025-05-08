@@ -4,13 +4,17 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 import likeHeart from "../../assets/likeHeart.svg";
 import likeHeartActive from "../../assets/likeHeartActive.svg";
 
-function ItemCard({ item, onCardClick, onCardLike }) {
+function ItemCard({ item, onCardClick, onCardLike, isLoggedIn }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const isLiked = item?.likes?.includes(currentUser?._id) || false;
+  const isLiked = item.likes.some(id => id === currentUser._id);
+  const likeButtonClassName = `card__like-button ${
+    !isLoggedIn && "card__like-button-hidden"
+  }`;
+  const likeButtonPath = isLiked ? likeHeart : likeHeartActive;
 
   const handleLike = (e) => {
-    e.PreventDefault();
+    e.preventDefault();
     onCardLike({ id: item._id, isLiked });
   };
 
@@ -27,6 +31,7 @@ function ItemCard({ item, onCardClick, onCardLike }) {
         src={item.imageUrl}
         alt={item.name}
       />
+      <img alt="Like button" className={likeButtonClassName} src={likeButtonPath} onClick={handleLike} />
     </li>
   );
 }

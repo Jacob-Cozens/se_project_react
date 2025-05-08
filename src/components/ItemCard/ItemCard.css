@@ -29,3 +29,12 @@
   border-radius: 19px;
   overflow: hidden;
 }
+
+.card__like-button {
+  width: 19px;
+  height: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border: none;
+  padding: 1px 9px;
+}
