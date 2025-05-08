@@ -1,32 +1,52 @@
 .sidebar {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar__avatar {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  border: rgba(0, 0, 0, 0.5) 1px;
-  margin-right: 16px;
-  border-radius: 50%;
-  right: 200px;
-  bottom: 5px;
-}
-
-.sidebar__userinfo {
-  display: flex;
-  align-items: center;
-  height: 56px;
-  width: 229px;
-}
-
-.sidebar__username {
-  position: absolute;
+  flex: 1 1 0;
+  max-width: 340px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
   font-family: "Cabinet Grotesk";
   font-size: 20px;
   font-weight: 700;
   font-style: normal;
-  left: 36px;
+  margin-top: 15px;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidebar__userinfo {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__column {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-right: 90px;
+  align-items: flex-start;
+}
+
+
+.sidebar__column_btn  {
+  color: #000;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

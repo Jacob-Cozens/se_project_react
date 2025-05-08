@@ -7,17 +7,24 @@ function SideBar({ onLogout, onUpdateProfile }) {
   const name = currentUser?.name;
   const avatar = currentUser?.avatar;
 
-
-
-
   return (
     <div className="sidebar">
       <div className="sidebar__userinfo">
         <img className="sidebar__avatar" src={avatar} alt="Default" />
-        <p className="sidebar__username">{name}</p>
+        <p>{name}</p>
       </div>
-      <button type="button" onClick={onUpdateProfile}>Update Profile</button>
-      <button type="button" onClick={onLogout}>Log Out</button>
+      <div className="sidebar__column">
+        <button
+          type="button"
+          className="sidebar__column_btn"
+          onClick={onUpdateProfile}
+        >
+          Change profile data
+        </button>
+        <button type="button" className="sidebar__column_btn" onClick={onLogout}>
+          Log out
+        </button>
+      </div>
     </div>
   );
 }
