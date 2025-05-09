@@ -57,7 +57,7 @@ function LoginModal({ handleCloseClick, isOpen, onLogin, onRegisterOpen }) {
           value={password}
         />
       </label>
-      <button className="modal__login-switch" onClick={onRegisterOpen}>or Sign Up</button>
+      <button type="button" className="modal__login-switch" onClick={onRegisterOpen}>or Sign Up</button>
     </ModalWithForm>
   );
 }

@@ -91,7 +91,7 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister, onLoginOpen }) {
           value={imageUrl}
         />
       </label>
-      <button className="modal__register-switch" onClick={onLoginOpen}>or Log In</button>
+      <button type="button" className="modal__register-switch" onClick={onLoginOpen}>or Log In</button>
     </ModalWithForm>
   );
 }
