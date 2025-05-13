@@ -52,10 +52,11 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister, onLoginOpen }) {
         <input
           type="email"
           className="modal__input"
-          id="email"
+          id="register-email"
           placeholder="Email"
           onChange={handleEmailChange}
           value={email}
+          required
         />
       </label>
       <label className="modal__label">
@@ -63,10 +64,11 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister, onLoginOpen }) {
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="register-password"
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
       </label>
       <label htmlFor="name" className="modal__label">
@@ -74,21 +76,23 @@ function RegisterModal({ handleCloseClick, isOpen, onRegister, onLoginOpen }) {
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="register-name"
           placeholder="Name"
           onChange={handleNameChange}
           value={name}
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
         Image{" "}
         <input
-          type="text"
+          type="url"
           className="modal__input"
-          id="imageUrl"
+          id="register-imageUrl"
           placeholder="Image URL"
           onChange={handleImageUrlChange}
           value={imageUrl}
+          required
         />
       </label>
       <button type="button" className="modal__register-switch" onClick={onLoginOpen}>or Log In</button>

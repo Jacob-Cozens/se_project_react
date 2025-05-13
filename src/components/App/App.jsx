@@ -12,6 +12,7 @@ import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnit"
 import { defaultClothingItems } from "../../utils/constants";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import {
   getItems,
   addItems,
@@ -25,10 +26,6 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import CurrentUserContext from "../../context/CurrentUserContext";
-
-function ProtectedRoute({ isLoggedIn, children }) {
-  return isLoggedIn ? children : <Navigate to="/" replace />;
-}
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -72,7 +69,7 @@ function App() {
         return newItem;
       });
     };
-    handleSubmit(addItemRequest).catch(console.error);
+    handleSubmit(addItemRequest);
   };
 
   const handleCardDelete = (selectedCard) => {
@@ -101,7 +98,7 @@ function App() {
         });
       });
     };
-    handleSubmit(loginRequest).catch(console.error);
+    handleSubmit(loginRequest);
   };
 
   const handleRegister = ({ email, password, name, imageUrl }) => {
@@ -113,7 +110,7 @@ function App() {
           return handleLogin({ email, password });
         });
     };
-    handleSubmit(registerRequest).catch(console.error);
+    handleSubmit(registerRequest);
   };
 
   const handleUpdateProfile = ({ name, imageUrl }) => {
@@ -124,7 +121,7 @@ function App() {
         return updatedUser;
       });
     };
-    handleSubmit(updateRequest).catch(console.error);
+    handleSubmit(updateRequest);
   };
 
   const handleCardLike = ({ id, isLiked }) => {

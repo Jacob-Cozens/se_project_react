@@ -40,10 +40,11 @@ function LoginModal({ handleCloseClick, isOpen, onLogin, onRegisterOpen }) {
         <input
           type="email"
           className="modal__input"
-          id="email"
+          id="login-email"
           placeholder="Email"
           onChange={handleEmailChange}
           value={email}
+          required
         />
       </label>
       <label className="modal__label">
@@ -51,10 +52,11 @@ function LoginModal({ handleCloseClick, isOpen, onLogin, onRegisterOpen }) {
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="login-password"
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
       </label>
       <button type="button" className="modal__login-switch" onClick={onRegisterOpen}>or Sign Up</button>

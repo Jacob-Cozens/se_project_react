@@ -44,10 +44,11 @@ function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="item-name"
           placeholder="Name"
           onChange={handleNameChange}
           value={name}
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
@@ -55,10 +56,11 @@ function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
         <input
           type="text"
           className="modal__input"
-          id="imageUrl"
+          id="item-imageUrl"
           placeholder="Image URL"
           onChange={handleImageUrlChange}
           value={imageUrl}
+          required
         />
       </label>
       <fieldset className="modal__radio-btns">
