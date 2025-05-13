@@ -45,14 +45,14 @@ const deleteItem = (selectedCard) => {
   });
 };
 
-const updateProfile = ({ name, imageUrl }) => {
+const updateProfile = ({ name, avatar }) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-    body: JSON.stringify({ name, imageUrl }),
+    body: JSON.stringify({ name, avatar }),
   }).then((res) => {
     return processResponse(res);
   });
