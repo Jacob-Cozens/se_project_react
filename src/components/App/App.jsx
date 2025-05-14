@@ -113,10 +113,10 @@ function App() {
     handleSubmit(registerRequest);
   };
 
-  const handleUpdateProfile = ({ name, imageUrl }) => {
+  const handleUpdateProfile = ({ name, avatar }) => {
     const token = localStorage.getItem("jwt");
     const updateRequest = () => {
-      return updateProfile({ name, imageUrl }, token).then((updatedUser) => {
+      return updateProfile({ name, avatar }, token).then((updatedUser) => {
         setCurrentUser(updatedUser);
         return updatedUser;
       });
