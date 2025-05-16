@@ -7,7 +7,7 @@ import likeHeartActive from "../../assets/likeHeartActive.svg";
 function ItemCard({ item, onCardClick, onCardLike, isLoggedIn }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const isLiked = item.likes.some((id) => id === currentUser._id);
+  const isLiked = item.likes.some((id) => id === currentUser?._id);
   const likeButtonClassName = isLoggedIn
     ? "card__like-button"
     : "card__like-button-hidden";
