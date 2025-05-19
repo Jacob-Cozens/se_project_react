@@ -149,7 +149,6 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser({});
     localStorage.removeItem("jwt");
-    history.push("/");
   };
 
   const onRegisterOpen = () => {
@@ -178,7 +177,11 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        setClothingItems(data);
+        setClothingItems(
+          data
+            .slice()
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        );
       })
       .catch((error) => {
         console.error(error);
