@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://what2wear.crabdance.com",
+  "deploy": "npm run build && scp -r ./dist/* jacobacozens@what2wear.crabdance.com:/home/jacobacozens/frontend",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
