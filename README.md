@@ -18,7 +18,7 @@ This Project is called "WTWR". In this project, I've created an app that tells y
 
 **Deployment**
 
-[Link to Website](www.what2wear.crabdance.com)
+[Link to Website](https://www.what2wear.crabdance.com)
 
 **Link to Backend**
 
