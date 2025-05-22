@@ -1,6 +1,9 @@
 import { processResponse } from "./Api";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.what2wear.crabdance.com"
+    : "http://localhost:3001";
 
 const register = ({ email, password, name, avatar }) => {
   return fetch(`${baseUrl}/signup`, {
